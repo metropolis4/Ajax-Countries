@@ -1,0 +1,13 @@
+extends layout 
+
+block content
+    .container
+        h1 Countries!
+        ul
+            for country in countries
+                li
+                    h2= country.name
+                    ul
+                        li Name in French: #{country.frenchName}
+                        li Local Name: #{country.localName}
+                        li Region: #{country.region}

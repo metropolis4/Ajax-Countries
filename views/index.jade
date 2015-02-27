@@ -1,0 +1,16 @@
+extends layout
+
+block content
+    .container
+        button.btn.btn-default(data-link="http://winter2015-refactoru-students.herokuapp.com/public/samples/countries.json", class="load") Load Countries
+    
+    .container
+        h2 Countries
+
+        ul.countries
+            li.eachCountry.hiding
+                h3.name
+                ul
+                    li.frenchName French Name: 
+                    li.localName Local Name:
+                    li.region Region:
