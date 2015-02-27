@@ -1,5 +1,6 @@
 $(document).on('ready', function(){
     $('body').on('click', '.load', function(){
+        $('.load').addClass('disabled');
         var dataLink = $('.load').attr('data-link');
         $.get('/load', {dataLink: dataLink}, function(data){
             var country = $('.eachCountry');

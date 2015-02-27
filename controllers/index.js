@@ -6,15 +6,15 @@ var indexController = {
 		res.render('index');
 	},
     load: function(req, res) {
-            request(req.query.dataLink, function(err, resp, body){
-                fs.exists('./models/countries.json', function(exists){
-                    if (!exists) {
-                        fs.writeFileSync('./models/countries.json', body);
-                    }
-                });
-            });
-            var Countries = require('../models/countries.json');
-            res.send(Countries);
+        fs.exists('./models/countries.json', function(exists){
+            if (!exists) {
+                request(req.query.dataLink, function(err, resp, body){
+                    fs.writeFileSync('./models/countries.json', body);
+                }); 
+            }
+        });
+        var Countries = require('../models/countries.json');
+        res.send(Countries);
     }
 };
 
